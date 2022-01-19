@@ -69,6 +69,7 @@ namespace DIO.Series{
 
             //Ver dentro da classe Genero. GetValues = retorna todas as opções. GetName = mostrar cada opção
             foreach (var i in Enum.GetValues(typeof(Genero))){
+                System.Console.WriteLine();
                 System.Console.WriteLine($"{i}-{Enum.GetName(typeof(Genero), i)}");
             }
 
@@ -94,6 +95,7 @@ namespace DIO.Series{
                                             ano: entradaAno,
                                             descricao: entradaDescricao);
             repositorio.Insere(novaSerie);
+            System.Console.WriteLine("Série inserida.");
         }
 
         private static void AtualizarSerie(){
@@ -147,6 +149,7 @@ namespace DIO.Series{
             var serie = repositorio.RetornaPorId(indiceSerie);
 
             System.Console.WriteLine(serie);
+            System.Console.WriteLine();
         }
         
         private static string ObterOpcaoUsuario(){
